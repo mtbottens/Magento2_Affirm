@@ -46,7 +46,7 @@ class IdentifyFinancingProgram implements ObserverInterface
     public function execute(Observer $observer)
     {
         $controller = $observer->getControllerAction();
-        $financingProgramValue = $controller->getRequest()->getParam('affirm_fpid');
+        $financingProgramValue = $observer->getRequest()->getParam('affirm_fpid');
         if (empty($financingProgramValue)) {
             return;
         }
